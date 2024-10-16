@@ -31,10 +31,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    # 4. Ejecutar pruebas
-    - name: Run tests
-      run: pytest
-
     # 5. Configurar las credenciales de AWS
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2

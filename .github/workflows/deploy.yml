@@ -1,5 +1,4 @@
 name: Deploy FastAPI Backend to AWS
-
 on:
   push:
     branches:

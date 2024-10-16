@@ -1,4 +1,4 @@
-name: Test and Deploy FastAPI Backend to AWS
+name: Deploy FastAPI Backend to AWS
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    # 5. Configurar las credenciales de AWS
+    # 4. Configurar las credenciales de AWS
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
@@ -39,7 +39,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
 
-    # 6. Desplegar el backend a S3
+    # 5. Desplegar el backend a S3
     - name: Deploy to S3
       run: |
         aws s3 sync . s3://autotarget-backend-bucket --delete --exclude ".github/*" --exclude "node_modules/*" --exclude ".venv/*"

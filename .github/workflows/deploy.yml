@@ -12,8 +12,7 @@ jobs:
 
     env:
       AWS_REGION: us-east-2
-      OPENAI_API_KEY: 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
-
+      OPENAI_API_KEY: ...
     steps:
     # 1. Checkout del código fuente
     - name: Checkout code
